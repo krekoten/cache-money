@@ -12,7 +12,7 @@ module Cash
       end
 
       def perform(find_options = {}, get_options = {})
-        # Applied path from JamesHarrison (http://gist.github.com/72487 line 16)
+        # Applied patch from JamesHarrison (http://gist.github.com/72487 line 16)
         if @active_record != Delayed::Job and cache_config = cacheable?(@options1, @options2, find_options)
           cache_keys, index = cache_keys(cache_config[0]), cache_config[1]
 
